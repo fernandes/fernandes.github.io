@@ -2,8 +2,8 @@
 layout: post
 title:  "Hacking on Crystal Language"
 date:   2016-06-01 13:46:12
-categories: hacking
-tags: crystal compiler
+categories: crystal
+tags: crystal hacking compiler opensource
 image: /assets/article_images/crystal_language.jpg
 comments: true
 ---
