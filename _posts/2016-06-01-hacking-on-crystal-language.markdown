@@ -10,7 +10,7 @@ comments: true
 
 # Hacking on Crystal Language
 
-Yesterday I started to help on crystal language, so here I'd like to
+Yesterday I started to help on [Crystal](http://crystal-lang.org/) Programming Language, so here I'd like to
 share my thoughts as well serve as future reference.
 
 * Issues that needs verification (current codebase)
