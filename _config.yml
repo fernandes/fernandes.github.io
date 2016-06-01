@@ -1,6 +1,6 @@
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 exclude:  [ Gemfile, Gemfile.lock, Procfile, vendor, gems, tmp, config.ru ]
 gems: [jekyll-paginate]
 disqus_shortname: codingbr

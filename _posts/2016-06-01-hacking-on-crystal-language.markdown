@@ -53,8 +53,7 @@ Really easy, so let's start hacking time!
 First, I chose [issue #194](https://github.com/crystal-lang/crystal/issues/194), don't ask
 me why I thought would be an easy one hahah
 
-Then when looking for a solution, I found a hard to understand the sentence
-and rewrote, first PR sent, iahul! It's a nice way to warm up.
+Then when looking for a solution, I found a typo on docs and fixed. First PR sent, cool! It's a nice way to warm up.
 
 ps: Crystal build tests for formatting, including on documentation, so
 when sending a doc PR __don't__ use [skip ci]
@@ -133,7 +132,7 @@ This contribution was an enjoyable time, I'd like to enumerate some reasons:
 
 * It took 4 hours the complete process, never thought would be possible
   to make my first contribution in so fewer time.
-* As the compiler is write in Crystal, it's easy to read / code
+* As the compiler is written in Crystal, it's easy to read / code
   (I'm not an experienced Crystal dev)
 * Contributing to a compiler/programming language is amazing.
 * I learned a lot of compile-time / runtime in Crystal
