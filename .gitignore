@@ -1,3 +1,5 @@
 _site
 .sass-cache
-vendor/bundle
+/vendor/bundle
+/vendor/cache
+/tmp
