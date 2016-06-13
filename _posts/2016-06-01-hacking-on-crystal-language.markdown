@@ -10,6 +10,8 @@ comments: true
 
 # Hacking on Crystal Language
 
+Você pode ver esse post em [português](/crystal/hacking_na_linguagem_crystal)
+
 Yesterday I started to help on [Crystal](http://crystal-lang.org/) Programming Language, so here I'd like to
 share my thoughts as well serve as future reference.
 
