@@ -11,7 +11,7 @@ title: Coding
 description: > # this means to ignore newlines until "baseurl:"
   Coding is the language of nature
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://fernandes.github.io" # the base hostname & protocol for your site
+url: "http://www.coding.com.br" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
 github_username: fernandes
 permalink: /:categories/:title
