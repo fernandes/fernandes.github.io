@@ -10,7 +10,7 @@ comments: true
 
 ## Motivation
 
-Looking for a javascript test runner for Rails, I found some options, so I decided to choose Blade, as this is not a comparison (I'm not even experienced to do this), here are the reasons why I preferred Blade:
+Looking for a javascript test runner for Rails, I found some options, so I decided to choose [Blade](https://github.com/javan/blade), as this is not a comparison (I'm not even experienced to do this), here are the reasons why I preferred Blade:
 
 * Easy to configure on standalone javascript libs
 * Sprockets support
