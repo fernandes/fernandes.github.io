@@ -10,6 +10,8 @@ comments: true
 
 ## Motivation
 
+Você pode ver esse post em [português](/rails/usando-blade-para-testar-javascript-no-rails)
+
 Looking for a javascript test runner for Rails, I found some options, so I decided to choose [Blade](https://github.com/javan/blade), as this is not a comparison (I'm not even experienced to do this), here are the reasons why I preferred Blade:
 
 * Easy to configure on standalone javascript libs
@@ -193,5 +195,7 @@ For me this is reached all my expectations for a javascript test runner for Rail
 3. Can run on CI using sauce labs (maybe a blade-phantomjs in the future?)
 
 And what do you think about this approach, you have any tips on testing JS on Rails that you'd like to share?
+
+ps: This apporach became a Blade [plugin](https://github.com/fernandes/blade-rails_plugin), please give feedback!
 
 Happy Testing on Rails!
