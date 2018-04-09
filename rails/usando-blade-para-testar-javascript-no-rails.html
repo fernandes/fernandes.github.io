@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Usando Blade Para Testar JavaScript no Rails</title>
+  <meta name="description" content="hack or die!
+" />
+
+  
+  <meta name="google-site-verification" content="dpwOcA22oOeUYo6fMAr0gaxe533YBJA490kUNN9oGTg">
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="canonical" href="http://www.coding.com.br/rails/usando-blade-para-testar-javascript-no-rails">
+
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="/assets/css/print.css" />
+
+  <!--favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+  <body itemscope itemtype="http://schema.org/Article">
+    <!-- header start -->
+
+<a href="http://www.coding.com.br" class="logo-readium"><span class="logo" style="background-image: url(/assets/images/logo.png)"></span></a>
+
+<!-- header end -->
+
+    <main class="content" role="main">
+      <article class="post">
+        
+        <div class="article-image">
+          <div class="post-image-image" style="background-image: url(/assets/images/backgound_blade.jpg)">
+            Article Image
+          </div>
+          <div class="post-meta">
+            <h1 class="post-title">Usando Blade Para Testar JavaScript no Rails</h1>
+            <div class="cf post-meta-text">
+              <div class="author-image" style="background-image: url(/assets/images/author.jpg)">Blog Logo</div>
+              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">Celso Fernandes</h4>
+              on
+              <time datetime="2016-06-13 18:00">13 Jun 2016</time>
+            </div>
+            <div style="text-align:center">
+              <a href="#topofpage" class="topofpage"><i class="fa fa-angle-down"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <section class="post-content">
+          <div class="post-reading">
+            <span class="post-reading-time"></span> read
+          </div>
+          <a name="topofpage"></a>
+          <h2 id="motivação">Motivação</h2>
+
+<p>You can check this post in <a href="/rails/using-blade-javascript-runner-on-rails">english</a></p>
+
+<p>Eu estava procurando por um executor de teste javascript com integração para o Rails, encontrei algumas opções, porém decidi escolher o <a href="https://github.com/javan/blade">Blade</a>. Como isto não é uma comparação (eu não sou tão experiente para isto), aqui estão as razões do porque eu preferi o Blade:</p>
+
+<ul>
+  <li>Fácil de configurar em bibliotecas <em>javascript</em></li>
+  <li>Suporta <em>sprockets</em></li>
+  <li>Ativamente usado no Turbolinks, Trix e ActionCable</li>
+  <li>Eu acredito que ele pode se tornar o testador padrão de javascript para o Rails no futuro</li>
+</ul>
+
+<p>Então comecei a configurar como seria de costume em uma biblioteca <em>javascript</em></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Gemfile</span>
+<span class="n">group</span> <span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span> <span class="k">do</span>
+  <span class="n">gem</span> <span class="s1">'blade'</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Depois de editar o Gemfile, temos:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>E adicionando um arquivo <code class="highlighter-rouge">.blade.yml</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>load_paths:
+  - test/javascripts/src
+  - test/javascripts/vendor
+
+logical_paths:
+  - application.js
+  - test.js
+</code></pre></div></div>
+
+<p>Como isto é uma aplicação do Rails, minha idéia é definir os caminhos <code class="highlighter-rouge">test/javascripts/{src/vendor}</code> para serem carregados, então Blade carrega meu teste e as bibliotecas de apoio.</p>
+
+<p>O arquivo <code class="highlighter-rouge">test.js</code> é o ponto de entrada para o conjunto de testes, e <code class="highlighter-rouge">application.js</code> é o arquivo de entrada de javascript no Rails.</p>
+
+<p>Consegui executar o Blade como esperado, mas não foi carregado <code class="highlighter-rouge">application.js</code>. Perguntando para o <a href="https://twitter.com/javan">@javan</a> no Twitter, ele <a href="https://twitter.com/javan/status/742356808207990785">respondeu</a> que não há integração <em>built-in</em> no Rails, então estamos por nossa própria conta.</p>
+
+<p>A primeira tentativa foi adicionar <code class="highlighter-rouge">app/assets/javascripts</code> para load_path, funcionou, mas nenhum javascript usado por gems era carregado (exemplo <code class="highlighter-rouge">jquery-rails</code>)</p>
+
+<p>Então porque não entrar no arquivo bin no blade, fazer o Rails carregar o caminho dos assets e configurar o blade?</p>
+
+<p>Depois de algum tempo descobrindo como as coisas funcionavam, eu alterei o binário do Blade, vamos comentar cada passo:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<span class="c1"># frozen_string_literal: true</span>
+<span class="c1">#</span>
+<span class="c1"># This file was generated by Bundler.</span>
+<span class="c1">#</span>
+<span class="c1"># The application 'blade' is installed as part of a gem, and</span>
+<span class="c1"># this file is here to facilitate running it.</span>
+<span class="c1">#</span>
+
+<span class="nb">require</span> <span class="s2">"pathname"</span>
+<span class="no">ENV</span><span class="p">[</span><span class="s2">"BUNDLE_GEMFILE"</span><span class="p">]</span> <span class="o">||=</span> <span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="s2">"../../Gemfile"</span><span class="p">,</span>
+  <span class="no">Pathname</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="kp">__FILE__</span><span class="p">).</span><span class="nf">realpath</span><span class="p">)</span>
+
+<span class="nb">require</span> <span class="s2">"rubygems"</span>
+<span class="nb">require</span> <span class="s2">"bundler/setup"</span>
+
+<span class="c1"># COMENTÁRIO: aqui termina o prelúdio do _bundler_</span>
+
+<span class="c1"># COMENTÁRIO: Inicializar a aplicação rails</span>
+<span class="nb">require_relative</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s1">'..'</span><span class="p">,</span> <span class="s1">'config/application.rb'</span><span class="p">)</span>
+<span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">initialize!</span>
+
+<span class="c1"># COMENTÁRIO: Inicializar o caminhos dos assets no Rails ...</span>
+<span class="n">paths</span> <span class="o">=</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">assets</span><span class="p">.</span><span class="nf">paths</span>
+<span class="n">cwd</span> <span class="o">=</span> <span class="sb">`pwd`</span><span class="p">.</span><span class="nf">chomp</span> <span class="o">+</span> <span class="s2">"/"</span>
+<span class="n">paths</span> <span class="o">=</span> <span class="n">paths</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="n">cwd</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span> <span class="p">}</span>
+
+<span class="c1"># COMENTÁRIO: ... E concatenar com o caminho especificado em .blade.yml</span>
+<span class="n">blade_config</span> <span class="o">=</span> <span class="no">YAML</span><span class="o">::</span><span class="n">load_file</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">__dir__</span><span class="p">,</span> <span class="s1">'..'</span><span class="p">,</span> <span class="s1">'.blade.yml'</span><span class="p">))</span>
+<span class="n">paths</span><span class="p">.</span><span class="nf">concat</span><span class="p">(</span><span class="n">blade_config</span><span class="p">[</span><span class="s2">"load_paths"</span><span class="p">])</span>
+<span class="no">Blade</span><span class="p">.</span><span class="nf">initialize!</span><span class="p">(</span><span class="ss">interface: </span><span class="s1">'runner'</span><span class="p">,</span> <span class="ss">load_paths: </span><span class="n">paths</span><span class="p">)</span>
+
+<span class="c1"># COMENTÁRIO: bundler executa blade</span>
+<span class="nb">load</span> <span class="no">Gem</span><span class="p">.</span><span class="nf">bin_path</span><span class="p">(</span><span class="s2">"blade"</span><span class="p">,</span> <span class="s2">"blade"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Eu não tenho certeza se está é a melhor abordagem, mas tive um feedback positivo do <a href="https://twitter.com/javan/status/742419613892247552">@javan</a>, então o próximo passo é fazer um plugin para o blade :)</p>
+
+<h2 id="bonus-fixtures">Bonus: Fixtures</h2>
+
+<p>Uma das minhas principais motivações em obter um javascript rodando era pela certeza que minhas <em>fixtures</em> foram sempre atualizadas, minha primeira idéia foi de processar o erb e… não funcionou!</p>
+
+<p>Então eu tive uma luz, é uma abordagem padrão testar a saída (view) em um controller do Rails (ok, a idéia não é discutir se esta é a melhor abordagem, o importante é que é factível) porque nós temos o <code class="highlighter-rouge">response.body</code>, então porque não escrever isto nas <em>fixtures</em>?</p>
+
+<p>A lógica por trás é:</p>
+
+<ol>
+  <li>Nós podemos acessar <code class="highlighter-rouge">test/javascripts/src/fixtures</code> no blade via <code class="highlighter-rouge">http://localhost:9876/fixtures</code></li>
+  <li>Nós podemos acessar <code class="highlighter-rouge">response.body</code> no controlador de teste do Rails</li>
+  <li>Vamos escrever em arquivos durante a executação de testes do Rails</li>
+  <li>Executar teste conjunto Javascript com a <em>fixture</em> mais atualizada</li>
+</ol>
+
+<p>Editei <code class="highlighter-rouge">test_helper.rb</code> e adicionei</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'fileutils'</span>
+
+<span class="k">class</span> <span class="nc">ActiveSupport</span><span class="o">::</span><span class="no">TestCase</span>
+  <span class="k">def</span> <span class="nf">save_fixture</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">selector</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
+    <span class="n">fixture_dir</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+    <span class="n">fixture_dir</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">fixtures_dir</span><span class="p">,</span> <span class="n">fixture_dir</span><span class="p">)</span>
+    <span class="n">fixture_path</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">fixture_dir</span><span class="p">,</span> <span class="no">File</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span> <span class="o">+</span> <span class="s2">".html"</span><span class="p">)</span>
+
+    <span class="k">unless</span> <span class="no">File</span><span class="p">.</span><span class="nf">directory?</span><span class="p">(</span><span class="n">fixture_dir</span><span class="p">)</span>
+      <span class="no">FileUtils</span><span class="p">.</span><span class="nf">mkdir_p</span><span class="p">(</span><span class="n">fixture_dir</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="c1"># Get only body for fixture (or selector if set)</span>
+    <span class="n">selector</span> <span class="o">=</span> <span class="n">selector</span><span class="p">.</span><span class="nf">nil?</span> <span class="p">?</span> <span class="s1">'body'</span> <span class="p">:</span> <span class="n">selector</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="nf">body</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">selector</span> <span class="o">==</span> <span class="s2">"body"</span><span class="p">)</span>
+      <span class="n">output</span> <span class="o">=</span> <span class="n">output</span><span class="p">.</span><span class="nf">css</span><span class="p">(</span><span class="n">selector</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">children</span><span class="p">.</span><span class="nf">to_s</span>
+    <span class="k">else</span>
+      <span class="n">output</span> <span class="o">=</span> <span class="n">output</span><span class="p">.</span><span class="nf">css</span><span class="p">(</span><span class="n">selector</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">to_s</span>
+    <span class="k">end</span>
+    <span class="no">File</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">fixture_path</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># Setup JavaScript Fixtures Dir</span>
+<span class="k">def</span> <span class="nf">fixtures_dir</span>
+  <span class="n">test_dir</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="kp">__FILE__</span><span class="p">))</span>
+  <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">test_dir</span><span class="p">,</span> <span class="s1">'javascripts'</span><span class="p">,</span> <span class="s1">'src'</span><span class="p">,</span> <span class="s1">'fixtures'</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="n">fixtures_dir</span>
+<span class="k">unless</span> <span class="no">File</span><span class="p">.</span><span class="nf">directory?</span><span class="p">(</span><span class="n">fixtures_dir</span><span class="p">)</span>
+  <span class="no">FileUtils</span><span class="p">.</span><span class="nf">mkdir_p</span><span class="p">(</span><span class="n">fixtures_dir</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Em um teste do controller é necessário apenas:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'test_helper'</span>
+
+<span class="k">class</span> <span class="nc">ThingControllerTest</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">TestCase</span>
+  <span class="nb">test</span> <span class="s2">"index"</span> <span class="k">do</span>
+    <span class="n">get</span> <span class="ss">:index</span>
+    <span class="n">assert</span> <span class="ss">:success</span>
+    <span class="c1"># do not specify second parameter if you want the whole body</span>
+    <span class="n">save_fixture</span><span class="p">(</span><span class="s1">'things/table'</span><span class="p">,</span> <span class="s1">'table#things'</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Desta forma temos <code class="highlighter-rouge">response.body</code> escrita para <code class="highlighter-rouge">test/javascripts/src/fixtures/things/table.html</code></p>
+
+<p>E você está pronto para escrever seu teste JS</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">QUnit</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span> <span class="s2">"ThingsController#index"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">assert</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="nx">assert</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">done</span> <span class="o">=</span> <span class="nx">assert</span><span class="p">.</span><span class="k">async</span><span class="p">();</span>
+
+  <span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span> <span class="s2">"/fixtures/things/table.html"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">data</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span> <span class="s2">"#qunit-fixture"</span> <span class="p">).</span><span class="nx">html</span><span class="p">(</span> <span class="nx">data</span> <span class="p">);</span>
+    <span class="nx">length</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"table#things tbody"</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">'tr'</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">length</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"Two things listed"</span><span class="p">);</span>
+    <span class="nx">done</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>O resultado é excelente:</p>
+
+<p><img src="/assets/article_images/blade_test_suite.png" width="500" /></p>
+
+<p>Se a <em>view</em> for mudada, a fixture será atualizada, e se o JS quebrar, o teste falhará.</p>
+
+<h2 id="finalizando">Finalizando</h2>
+
+<p>Para mim, atingiu todas as minhas expectativas para um teste javascript executando no Rails, porque é uma configuração poderosa nos seguintes pontos:</p>
+
+<ol>
+  <li>Fácil de instalar</li>
+  <li>Executa o teste em diversos navegadores</li>
+  <li>Pode ser executado em CI utilizando <em>sauce labs</em> (talvez em blade-phantomjs no futuro?)</li>
+</ol>
+
+<p>E o que você acha sobre essa abordagem, você tem alguma dica sobre testes JS no Rails que você gostaria de compartilhar?</p>
+
+<p>ps: Esta abordagem se tornou um <a href="https://github.com/fernandes/blade-rails_plugin">plugin</a> para o Blade, aguardo feedback!</p>
+
+<p>Faça ótimos testes com Rails!</p>
+
+
+        </section>
+        
+        <section class="notepad-disqus row">
+          <div class="small-12 columns">
+            <h1 class="notepad-comments-header">Comments</h1>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'codingbr'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+          </div>
+        </section>
+        
+        <footer class="post-footer">
+          <section class="share">
+            
+              
+            
+              
+                <a class="icon-twitter" href="http://twitter.com/share?text=Usando+Blade+Para+Testar+JavaScript+no+Rails&amp;url=http://www.coding.com.br/rails/usando-blade-para-testar-javascript-no-rails"
+                  onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+                <i class="fa fa-twitter"></i><span class="hidden">twitter</span>
+                </a>
+              
+            
+          </section>
+        </footer>
+        <div class="bottom-teaser cf">
+          <div class="isLeft">
+            <h5 class="index-headline featured"><span>Written by</span></h5>
+            <section class="author">
+              <div class="author-image" style="background-image: url(/assets/images/author.jpg)">Blog Logo</div>
+              <h4>Celso Fernandes</h4>
+              <p class="bio"></p>
+              <hr>
+              <p class="published">Published <time datetime="2016-06-13 18:00">13 Jun 2016</time></p>
+            </section>
+          </div>
+          
+          <div class="isRight">
+            <h5 class="index-headline featured"><span>Supported by</span></h5>
+            <footer class="site-footer">
+              <section class="poweredby">Proudly published with <a href="http://jekyllrb.com"> Jekyll</a></section>
+              <a class="subscribe" href="/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> You should subscribe to my feed.</span></a>
+              <div class="inner">
+                <section class="copyright">All content copyright <a href="/">Celso Fernandes</a> &copy; 2018<br>All rights reserved.</section>
+              </div>
+            </footer>
+          </div>
+        </div>
+      </article>
+    </main>
+    <div class="bottom-closer">
+      <div class="background-closer-image"  style="background-image: url(/assets/images/header-background.jpg)">
+        Image
+      </div>
+      <div class="inner">
+        <h1 class="blog-title">Coding</h1>
+        <h2 class="blog-description">hack or die!
+</h2>
+        <a href="/" class="btn">Back to Overview</a>
+      </div>
+    </div>
+    
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78665501-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script>
+
+
+  </body>
+</html>
