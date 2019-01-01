@@ -170,7 +170,7 @@ const Footer = ({classes}) => {
               <Button variant="contained" color="primary">
                 Subscribe
               </Button>
-              <p className={classes.mailingMessage}>Why a mailing list?</p>
+              <p className={classes.mailingMessage}><Link to="/respect#mailing-list">Why a mailing list?</Link></p>
             </Grid>
           </Grid>
           <Grid item xs={12} md={4}>
