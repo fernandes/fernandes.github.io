@@ -15,17 +15,25 @@ const RespectPage = () => {
 
       <p>This website is based on mutual respect, what it means? I <strong>don't</strong> use <strong>any</strong> 3rd party services that tracks you, nothing like Google Analytics, Social Media (Facebook, Twitter) widgets that is used to track you.</p>
 
-      <p>If you just navigate on this site, we just collect some technical data to ensure no problem is happening, and to measure the performance.</p>
+      <p>If you navigate on this site, we collect some technical data to ensure no problem is happening and to measure the performance.</p>
 
-      <p>If you login to comment on this website, the comments will be stored based solely on the information you provide.</p>
+      <p>If you log in to comment on this website, the comments will be stored based solely on the information you provide.</p>
 
-      <p>As I don't use any widgets, if you'd like to share some post/article with a friend, you can use our widget that send via e-mail, and I ensure you, neither you and your friend will be added to any mailing list.</p>
+      <p>As I don't use any widgets, if you'd like to share some post/article with a friend, you can use our widget that sends via e-mail, and I ensure you, that won't add either you and your friend e-mail to any mailing list.</p>
 
-      <p>My mailing list is used solely by communicating purposes with who, actively, told us that want to have a conversation with me, I wanna talk with awesome people that wanna talk back to me. Period.</p>
+      <p>My mailing list is used solely by communicating purposes with who, actively, told us that want to have a conversation with me, I want to talk with awesome people that wanna talk back to me. Period.</p>
 
       <p>How this site makes money? Simple, it doesn't! My job is being a web developer, here is a place where I share information with friends, giving back to the community that always helped me. This site is my _experiment_ over a simple, free web. Where the owner and the users have full control of the medium.</p>
 
       <p>You can share and modify any work on this website, this is your right, your only duty is to distribute the work with the same licensing described on the <a href="#creative-commons">Creative Commons</a> section, any futher information, just get in <Link to="/contact">contact</Link></p>
+
+      <h2 id="mailing-list">Mailing List</h2>
+
+      <p>I believe in a free internet, where everyone controls its data, has the right to privacy and if you want to share any data, that does it consciously.</p>
+
+      <p>Based on this principle, I've chosen to use the mailing list as a primary way of communicating with people I care and want to talk to me. I write by myself all mail sent to the mailing list and read/reply to every mail replied.</p>
+
+      <p>I do not use social media to communicate two-way to anyone regarding the contents of this website, I use my social media to make some divulgation about some published article and the site itself.</p>
 
       <p>Welcome!</p>
       
@@ -65,7 +73,7 @@ const RespectPage = () => {
 
       <h5>Usage Data</h5>
 
-      <p>I may also collect information how the Service is accessed and used ("Usage Data"). This Usage Data may include information such as your computer's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
+      <p>I may also collect information about how the Service is accessed and used ("Usage Data"). This Usage Data may include information such as your computer's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
 
       <h5>Tracking & Cookies Data</h5>
 
@@ -96,7 +104,7 @@ const RespectPage = () => {
       <h3>Transfer Of Data</h3>
 
       <p>Your information, including Personal Data, may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction.</p>
-      <p>If you are located outside United States or Brazil and choose to provide information to us, please note that I transfer the data, including Personal Data, to United States and Brazil and process it there.</p>
+      <p>If you are located outside the United States or Brazil and choose to provide information to us, please note that I transfer the data, including Personal Data, to the United States and Brazil and process it there.</p>
       <p>Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.</p>
       <p>Coding will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.</p>
 
