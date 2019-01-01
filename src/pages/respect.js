@@ -7,6 +7,8 @@ const RespectPage = () => {
   return (
     <MainLayout>
 
+      <p>As this website is versioned under git version-control system, you can check the full history of this file on <a href='https://github.com/fernandes/fernandes.github.io/commits/master/src/pages/respect.js' target="_blank" style={{color: '#000'}} rel="noopener noreferrer">Github</a></p>
+
       <h1 id="respect">Respect</h1>
 
       <p>This website is run solely by one person, <Link to="/about">me</Link>.</p>
