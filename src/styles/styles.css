@@ -1,0 +1,86 @@
+/*
+  Normalize + Readability
+*/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Reset */
+html, body, div {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fff;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.78);
+
+  /* Helps fonts on OSX look more consistent with other systems */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Use momentum-based scrolling on iOS devices */
+  -webkit-overflow-scrolling: touch;
+  
+  /* reader */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+  -moz-font-smoothing: subpixel-antialiased !important;
+  text-rendering: optimizelegibility !important;
+  color: rgb(27, 27, 27, 0.9);
+  text-align: start;
+  letter-spacing: .01em;
+
+  overflow-y: overlay;
+}
+
+h1 {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    letter-spacing: .05em
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Josefin Sans', sans-serif;
+}
+/* 
+  Markdown Improvements
+*/
+
+.blog-post-content table {
+  border-collapse: collapse;
+  display: block;
+  width: 100%;
+  overflow: auto;
+}
+
+.blog-post-content table th {
+  font-weight: 600;
+}
+
+.blog-post-content table th,
+.blog-post-content table td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+.blog-post-content table tr {
+  background-color: #fafafa;
+  border-top: 1px solid #c6cbd1;
+}
+
+.blog-post-content table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
