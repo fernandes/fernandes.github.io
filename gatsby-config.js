@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Coding`,
+    siteUrl: 'https://coding.com.br'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -76,6 +77,22 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://coding.com.br',
+        sitemap: 'https://coding.com.br/sitemap.xml',
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }]
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }]
+          }
+        }
+      }
+    },
+    `gatsby-plugin-sitemap`,
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
           name: 'Coding',
@@ -84,9 +101,10 @@ module.exports = {
           background_color: '#fff',
           theme_color: '#fff',
           display: 'standalone',
-          icon: 'src/favicon/ms-icon-310x310.png'
+          icon: 'src/favicon/ms-icon-310x310.png',
+          legacy: true
       }
-  },
-  'gatsby-plugin-offline'
+    },
+    `gatsby-plugin-offline`,
   ],
 }

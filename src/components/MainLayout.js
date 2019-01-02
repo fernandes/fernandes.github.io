@@ -4,6 +4,7 @@ import Footer from './Footer'
 import Drawer from './Drawer'
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
+import { Helmet } from "react-helmet"
 
 const styles = theme => ({
   root: {
@@ -23,6 +24,13 @@ const styles = theme => ({
 const MainLayout = ({children, classes}) => {
   return (
     <>
+      <Helmet>
+        <html lang="en" />
+        <meta charSet="utf-8" />
+        <title>Coding</title>
+        <link rel="canonical" href="https://coding.com.br" />
+        <meta name="description" content="Being in love with Linux since 1998, Ruby/Rails since 2010 and React/ES6 since 2016, this is the space where I have some articles about these technologies" />
+      </Helmet>
       <Grid container className={classes.root} direction='row'>
         <Grid item xs={12}>
           <Header />

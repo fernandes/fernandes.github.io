@@ -3,8 +3,8 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import JssProvider from 'react-jss/lib/JssProvider';
 import getPageContext from './getPageContext';
+import './fonts/menlo.ttf'
 import './styles/fonts.css'
-import './styles/menlo.ttf'
 import './styles/gfm.css'
 import './styles/syntax.css'
 import "prismjs/plugins/line-numbers/prism-line-numbers.css"

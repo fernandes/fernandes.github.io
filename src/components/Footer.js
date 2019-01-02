@@ -148,7 +148,7 @@ const Footer = ({classes}) => {
             <Grid container className={classes.mailingBox} direction='column' alignItems='stretch'>
               <h3 className={classes.mailingTitle}>Mailing</h3>
               <TextField
-                id="outlined-email-input"
+                id="mailing_name"
                 label="Name"
                 className={classes.textField}
                 type="name"
@@ -158,7 +158,7 @@ const Footer = ({classes}) => {
                 variant="outlined"
               />
               <TextField
-                id="outlined-email-input"
+                id="mailing_email"
                 label="Email"
                 className={classes.textField}
                 type="email"
@@ -214,7 +214,9 @@ const Footer = ({classes}) => {
           <Grid item xs={4}>
             <p className={classes.github}>
               <a href='https://github.com/fernandes' target="_blank" style={{color: '#000'}} rel="noopener noreferrer">
-                <GithubCircle style={{fontSize: 28}} />
+                <span role="img" aria-label="Github Logo">
+                  <GithubCircle style={{fontSize: 28}} />
+                </span>
               </a>
             </p>
           </Grid>
