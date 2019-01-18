@@ -94,3 +94,13 @@ h6 {
 .blog-post-content table tr:nth-child(2n) {
   background-color: #f6f8fa;
 }
+
+/* exported markdown */
+.task-list-item {
+  list-style-type: none;
+}
+
+.task-list-item-checkbox {
+  margin-left: -20px;
+  vertical-align: middle;
+}
