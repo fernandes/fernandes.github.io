@@ -5,7 +5,6 @@ import { withStyles } from '@material-ui/core/styles'
 import CalendarTodayOutlinedIcon from '@material-ui/icons/CalendarTodayOutlined'
 import BookmarkOutlinedIcon from '@material-ui/icons/BookmarkBorder'
 import classNames from 'classnames'
-import Hidden from '@material-ui/core/Hidden'
 import { Link } from "gatsby"
 
 const styles = (theme) => ({
@@ -20,9 +19,6 @@ const styles = (theme) => ({
   },
   headerLink: {
     float: 'inherit',
-    [theme.breakpoints.up('lg')]: {
-      float: 'left',
-    },
     textDecoration: 'none'
   },
   title: {
@@ -30,19 +26,11 @@ const styles = (theme) => ({
     color: 'rgba(0, 0, 0, 0.78)',
     fontWeight: 600,
     fontSize: 32,
-    [theme.breakpoints.down('md')]: {
-      marginBottom: 5,
-    },
+    marginBottom: 5,
   },
   details: {
     fontFamily: "arial, sans-serif",
-    [theme.breakpoints.up('lg')]: {
-      textAlign: 'right',
-      display: 'none'
-    },
-    [theme.breakpoints.down('md')]: {
-      marginTop: 0,
-    },
+    marginTop: 0,
   },
   detailsMd: {
     lineHeight: '20px',
@@ -78,18 +66,10 @@ const Article = ({classes, title, body, date, tags = [], path, media}) => {
         >
           <h1 className={classes.title}>{title}</h1>
         </Link>
-        <Hidden mdDown>
-          <p className={classes.details}>
-            <BookmarkOutlinedIcon className={classNames(classes.icon, classes.iconBookmark)} />{tags.join(", ")} &nbsp;&nbsp;
-            <CalendarTodayOutlinedIcon className={classNames(classes.icon, classes.iconCalendar)} /> {date}
-          </p>
-        </Hidden>
-        <Hidden lgUp>
-          <p className={classes.detailsMd}>
-            <BookmarkOutlinedIcon className={classNames(classes.icon, classes.iconBookmark)} />{tags.join(", ")}<br />
-            <CalendarTodayOutlinedIcon className={classNames(classes.icon, classes.iconCalendar)} /> {date}
-          </p>
-        </Hidden>
+        <p className={classes.detailsMd}>
+          <BookmarkOutlinedIcon className={classNames(classes.icon, classes.iconBookmark)} />{tags.join(", ")}<br />
+          <CalendarTodayOutlinedIcon className={classNames(classes.icon, classes.iconCalendar)} /> {date}
+        </p>
       </Grid>
       <Grid item xs={12}>
         <ArticleBody body={body} media={media} path={path} />

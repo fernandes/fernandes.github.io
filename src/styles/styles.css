@@ -44,6 +44,12 @@ body {
   overflow-y: overlay;
 }
 
+@media only screen and (max-width: 600px) {
+  body {
+    overflow-y: scroll;
+  }
+}
+
 h1 {
     font-size: 1.8em;
     font-weight: bold;

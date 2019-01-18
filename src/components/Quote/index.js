@@ -4,7 +4,6 @@ import { withStyles } from '@material-ui/core/styles'
 import CalendarTodayOutlinedIcon from '@material-ui/icons/CalendarTodayOutlined'
 import BookmarkOutlinedIcon from '@material-ui/icons/BookmarkBorder'
 import classNames from 'classnames'
-import Hidden from '@material-ui/core/Hidden'
 
 const styles = (theme) => ({
   article: {
@@ -18,23 +17,13 @@ const styles = (theme) => ({
   },
   title: {
     margin: '14px 0px',
-    [theme.breakpoints.down('md')]: {
-      marginBottom: 5,
-    },
+    marginBottom: 5,
   },
   gridDetails: {
-    [theme.breakpoints.up('lg')]: {
-      display: 'none'
-    },
   },
   details: {
     fontFamily: "arial, sans-serif",
-    [theme.breakpoints.up('lg')]: {
-      textAlign: 'right'
-    },
-    [theme.breakpoints.down('md')]: {
-      marginTop: 0,
-    },
+    marginTop: 0,
   },
   detailsMd: {
     lineHeight: '20px',
@@ -87,18 +76,10 @@ const Quote = ({classes, title, tags = [], date, body, media}) => {
             <h1 className={classes.title}>{title}</h1>
           </Grid>
           <Grid item xs={12} lg={5} className={classNames('details', classes.gridDetails)}>
-            <Hidden xsDown>
-              <p className={classes.details}>
-                <BookmarkOutlinedIcon className={classNames(classes.icon, classes.iconBookmark)} />{tags.join(", ")} &nbsp;&nbsp;
-                <CalendarTodayOutlinedIcon className={classNames(classes.icon, classes.iconCalendar)} /> {date}
-              </p>
-            </Hidden>
-            <Hidden smUp>
-              <p className={classes.detailsMd}>
-                <BookmarkOutlinedIcon className={classNames(classes.icon, classes.iconBookmark)} />{tags.join(", ")}<br />
-                <CalendarTodayOutlinedIcon className={classNames(classes.icon, classes.iconCalendar)} /> {date}
-              </p>
-            </Hidden>
+            <p className={classes.detailsMd}>
+              <BookmarkOutlinedIcon className={classNames(classes.icon, classes.iconBookmark)} />{tags.join(", ")}<br />
+              <CalendarTodayOutlinedIcon className={classNames(classes.icon, classes.iconCalendar)} /> {date}
+            </p>
           </Grid>
         </Grid>
       </Grid>
