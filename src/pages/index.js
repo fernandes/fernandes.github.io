@@ -36,6 +36,7 @@ export const pageQuery = graphql`
             title
             tags
             featured
+            excerpt
             media {
               type
               source

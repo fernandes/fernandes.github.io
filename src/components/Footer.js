@@ -1,9 +1,8 @@
 import React from "react"
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
-import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
 import Avatar from '@material-ui/core/Avatar'
+import MailingForm from './MailingForm'
 import gravatar from '../images/gravatar.jpg'
 import classNames from 'classnames'
 import logo from '../images/logo.jpg'
@@ -41,10 +40,6 @@ const styles = theme => ({
   footerItemSmall: {
     textAlign: 'center',
     marginTop: 10,
-  },
-  textField: {
-    // marginLeft: theme.spacing.unit,
-    // marginRight: theme.spacing.unit,
   },
   aboutTitle: {
     
@@ -147,29 +142,7 @@ const Footer = ({classes}) => {
           <Grid item xs={12} md={4}>
             <Grid container className={classes.mailingBox} direction='column' alignItems='stretch'>
               <h3 className={classes.mailingTitle}>Mailing</h3>
-              <TextField
-                id="mailing_name"
-                label="Name"
-                className={classes.textField}
-                type="name"
-                name="name"
-                autoComplete="name"
-                margin="dense"
-                variant="outlined"
-              />
-              <TextField
-                id="mailing_email"
-                label="Email"
-                className={classes.textField}
-                type="email"
-                name="email"
-                autoComplete="email"
-                margin="dense"
-                variant="outlined"
-              />
-              <Button variant="contained" color="primary">
-                Subscribe
-              </Button>
+              <MailingForm />
               <p className={classes.mailingMessage}><Link to="/respect#mailing-list">Why a mailing list?</Link></p>
             </Grid>
           </Grid>
