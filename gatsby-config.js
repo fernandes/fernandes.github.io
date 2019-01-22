@@ -3,6 +3,10 @@ require("dotenv").config({
 })
 
 module.exports = {
+  proxy: {
+    prefix: "/ahoy",
+    url: process.env.API_URL,
+  },
   siteMetadata: {
     title: `Coding`,
     siteUrl: 'https://coding.com.br'

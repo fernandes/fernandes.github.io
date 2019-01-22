@@ -53,7 +53,7 @@ class MailingForm extends React.Component {
   subscriptionStatus = (status) => {
     axios({
       method: 'post',
-      url: `${process.env.API_URL}/v1/subscriptions`,
+      url: `${process.env.API_URL}/api/v1/subscriptions`,
       data: {
         name: this.state.name,
         email: this.state.email,

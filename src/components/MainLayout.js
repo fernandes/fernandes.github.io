@@ -22,32 +22,35 @@ const styles = theme => ({
   },
 })
 
-const MainLayout = ({children, classes}) => {
-  return (
-    <>
-      <Helmet>
-        <html lang="en" />
-        <meta charSet="utf-8" />
-        <title>Coding</title>
-        <link rel="canonical" href="https://coding.com.br" />
-        <meta name="description" content="Being in love with Linux since 1998, Ruby/Rails since 2010 and React/ES6 since 2016, this is the space where I have some articles about these technologies" />
-      </Helmet>
-      <Grid container className={classes.centerContainer} direction='row'>
-        <Grid container className={classes.root} direction='row'>
-          <Grid item xs={12}>
-            <Header />
+class MainLayout extends React.Component {
+  render() {
+    const { children, classes } = this.props
+    return (
+      <>
+        <Helmet>
+          <html lang="en" />
+          <meta charSet="utf-8" />
+          <title>Coding</title>
+          <link rel="canonical" href="https://coding.com.br" />
+          <meta name="description" content="Being in love with Linux since 1998, Ruby/Rails since 2010 and React/ES6 since 2016, this is the space where I have some articles about these technologies" />
+        </Helmet>
+        <Grid container className={classes.centerContainer} direction='row'>
+          <Grid container className={classes.root} direction='row'>
+            <Grid item xs={12}>
+              <Header />
+            </Grid>
+            <Grid item xs={12}>
+              {children}
+            </Grid>
+            <Grid item xs={12}>
+              <Footer />
+            </Grid>
           </Grid>
-          <Grid item xs={12}>
-            {children}
-          </Grid>
-          <Grid item xs={12}>
-            <Footer />
-          </Grid>
+          <Drawer />
         </Grid>
-        <Drawer />
-      </Grid>
-    </>
-  )
+      </>
+    )
+  }
 }
 
 export default withStyles(styles)(MainLayout)
