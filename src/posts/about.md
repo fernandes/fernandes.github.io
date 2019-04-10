@@ -32,6 +32,8 @@ featured: false
 Agrosmart 2016-Current (2 yrs 1 mo) **Remote Position**
 _Software Director_
 
+Agrosmart is a digital agriculture platform that helps farmers make data-driven decisions. Focused on gathering data and deliver insights so farmers and suppliers.
+
 > At Agrosmart I was invited to handle the web product development, after being invested, there was a need to deliver the product as fast as possible, so my main goal was to roll features to customers, keeping stability and performance of the system.
 >
 > We went from 0 to hundreds of customers, thousands of sensors sending data to the system and millions of data points generating agronomical insights to customers.
@@ -39,12 +41,16 @@ _Software Director_
 Zertico 2010-2016 (6 yrs 1 mo) - Itajubá/MG/Brazil
 _CEO_
 
+A startup with a focus on delivering premium Cloud Computing solutions to small and medium businesses. An IBM/SoftLayer partner.
+
 > Founded the company with my former boss Elias, from Foreclosure Listings, consolidating the infrastructure, focused on delivery high availability to customers.
 > 
-> We got some vast achievements, with some customers running at 99.999%, transferring petabytes of data per month in our network and managing about 400 Linux servers.
+> We got some huge achievements, with some customers running at 99.999%, transferring petabytes of data per month in our network and managing about 400 Linux servers.
 
 Agência Mestre 2008-2010 (1 yr 10 mos) - Itajubá/MG/Brazil
 _Project Manager_
+
+One of the biggest Brazilian digital marketing agencies with a focus on inbound marketing and SEO.
 
 > Agência Mestre is a spin-off of Foreclosure Listings, and I was invited to manage the product development of the company. My goal was to lead the development of SEO-Related products (website, backend engines, crawlers) and keep running the infrastructure.
 > 
@@ -53,6 +59,8 @@ _Project Manager_
 Foreclosure Listings 2005-2008 (3 yrs 2 mo) - Itajubá/MG/Brazil
 _System Administrator_
 
+A US foreclosure website which offers thousands of new properties daily to home brokers.
+
 > My first professional experience, in a US company, very grateful for such a big first opportunity. My goal was to keep the company websites running, I was the first sysadmin to be hired, and managed the web servers (Apache), running PHP Application and accessing MySQL database.
 > 
 > I developed an HA strategy for the company, moving websites running on single bare metal servers to a cluster of machines, with replications increasing the uptime from (in some cases 99.5%) to more than 99.9% with low cost.
@@ -60,7 +68,9 @@ _System Administrator_
 UNIFEI 2004-2005 (6 mos) - Itajubá/MG/Brazil
 _Internship_
 
-> I have great opportunity to work with great professors, I was in charge to install and configure Linux on 2 laboratories that were used by university students.
+Internship on the Federal University of Itajubá during bachelor course.
+
+> I had an excellent opportunity to work with great professors. I was in charge to install and configure Linux on 2 laboratories that were used by university students.
 > 
 > I deployed the 2 laboratories (with about 35 machines each), with single authentication, stateful/shared (was non-cloud days) home directories.
 
