@@ -15,7 +15,7 @@
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "^3.0.2",
     "ahoy.js": "^0.3.4",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "dotenv": "^6.2.0",
     "gatsby": "^2.3.14",
     "gatsby-plugin-manifest": "^2.0.26",
