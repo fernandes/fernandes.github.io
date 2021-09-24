@@ -3,11 +3,11 @@
 	import Menu from '$lib/components/Menu.svelte';
 	import ArticleItem from '$lib/components/ArticleItem.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-  import transferwiseLogo from "$lib/components/images/transferwise-logo.jpg"
-  import timezones from "$lib/components/images/timezones.jpg"
-  import cover_blade from "$lib/components/images/blade.jpg"
-  import cover_jekyll from "$lib/components/images/jekyll.jpg"
-  import cover_crystal from "$lib/components/images/crystal_language.jpg"
+  import transferwiseLogo from "$lib/images/transferwise-logo.jpg"
+  import timezones from "$lib/images/timezones.jpg"
+  import cover_blade from "$lib/images/blade.jpg"
+  import cover_jekyll from "$lib/images/jekyll.jpg"
+  import cover_crystal from "$lib/images/crystal_language.jpg"
 </script>
 
 <ArticleItem
