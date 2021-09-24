@@ -1,13 +1,13 @@
 <script>
-	import Header from '../components/Header.svelte';
-	import Menu from '../components/Menu.svelte';
-	import ArticleItem from '../components/ArticleItem.svelte';
-	import Footer from '../components/Footer.svelte';
-  import transferwiseLogo from "../components/images/transferwise-logo.jpg"
-  import timezones from "../components/images/timezones.jpg"
-  import cover_blade from "../components/images/blade.jpg"
-  import cover_jekyll from "../components/images/jekyll.jpg"
-  import cover_crystal from "../components/images/crystal_language.jpg"
+	import Header from '$lib/components/Header.svelte';
+	import Menu from '$lib/components/Menu.svelte';
+	import ArticleItem from '$lib/components/ArticleItem.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+  import transferwiseLogo from "$lib/components/images/transferwise-logo.jpg"
+  import timezones from "$lib/components/images/timezones.jpg"
+  import cover_blade from "$lib/components/images/blade.jpg"
+  import cover_jekyll from "$lib/components/images/jekyll.jpg"
+  import cover_crystal from "$lib/components/images/crystal_language.jpg"
 </script>
 
 <ArticleItem
