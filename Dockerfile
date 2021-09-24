@@ -10,10 +10,10 @@ COPY . .
 RUN ls -lah .
 
 RUN --mount=type=secret,id=vite_telegram_chat_id \
-  export VITE_TELEGRAM_CHAT_ID=`cat /run/secrets/vite_telegram_chat_id`
+  echo "VITE_TELEGRAM_CHAT_ID=`cat /run/secrets/vite_telegram_chat_id`" >> /app/.env
 
 RUN --mount=type=secret,id=vite_telegram_key \
-  export VITE_TELEGRAM_KEY=`cat /run/secrets/vite_telegram_key`
+  echo "VITE_TELEGRAM_KEY=`cat /run/secrets/vite_telegram_key`" >> /app/.env
 
 RUN yarn build
 
