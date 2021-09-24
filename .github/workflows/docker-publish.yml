@@ -41,3 +41,6 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          secrets: |
+            "vite_telegram_chat_id=${{ secrets.VITE_TELEGRAM_CHAT_ID }}"
+            "vite_telegram_key=${{ secrets.VITE_TELEGRAM_KEY }}"

@@ -9,6 +9,12 @@ RUN yarn
 COPY . .
 RUN ls -lah .
 
+RUN --mount=type=secret,id=vite_telegram_chat_id \
+  export VITE_TELEGRAM_CHAT_ID=`cat /run/secrets/vite_telegram_chat_id`
+
+RUN --mount=type=secret,id=vite_telegram_key \
+  export VITE_TELEGRAM_KEY=`cat /run/secrets/vite_telegram_key`
+
 RUN yarn build
 
 RUN rm -rf node_modules
