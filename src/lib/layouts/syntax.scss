@@ -1,7 +1,11 @@
 code.language-ruby, code.language-crystal {
   color: #85b1e0;
 
-  span.token.class-name {
+  span.token.boolean {
+    color: #dda2f6
+  }
+
+  span.token.class-name, span.token.builtin {
     color: #ac74ff
   }
 

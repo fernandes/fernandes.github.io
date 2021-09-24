@@ -5,10 +5,25 @@
 	import Footer from '$lib/components/Footer.svelte';
   import transferwiseLogo from "$lib/images/transferwise-logo.jpg"
   import timezones from "$lib/images/timezones.jpg"
+  import cover_crystal_bash_test from "$lib/images/crystal_bash_test.jpg"
   import cover_blade from "$lib/images/blade.jpg"
   import cover_jekyll from "$lib/images/jekyll.jpg"
   import cover_crystal from "$lib/images/crystal_language.jpg"
 </script>
+
+<ArticleItem
+  title={"Crystal And The Test Command"}
+  image={cover_crystal_bash_test}
+  imageCaption={"having fun with crystal and shell script"}
+  imageAltText={"montage with bash logo, crystal logo and test text"}
+  tags={"crystal, bash, shell script, test"}
+  date={"September 24, 2021"}
+  href={"/crystal/crystal-and-the-test-command"}
+  excerpt={`
+    When writing shell script, there's <strong>test</strong>, a condition evaluation utility. Crystal is a power programming language, that supports all <strong>test</strong> features.<br />
+    What if we are porting a shell script to crystal, and we want to verify the correspondent command quickly? Check this article/cheatsheet and discover everything you need.
+  `}
+/>
 
 <ArticleItem
   title={"Transferwise"}
