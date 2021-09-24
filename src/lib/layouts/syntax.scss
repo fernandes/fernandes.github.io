@@ -1,0 +1,35 @@
+code.language-ruby, code.language-crystal {
+  color: #85b1e0;
+
+  span.token.class-name {
+    color: #ac74ff
+  }
+
+  span.token.comment {
+    color: #555c77
+  }
+
+  span.token.constant {
+    color: #ac74ff
+  }
+
+  span.token.keyword {
+    color: #7e7edd
+  }
+
+  span.token.operator {
+    color: #b9bed5
+  }
+
+  span.token.punctuaction {
+    color: #b9bed5
+  }
+
+  span.token.string {
+    color: #9aefea
+  }
+
+  span.token.symbol {
+    color: #dda2f6
+  }
+}

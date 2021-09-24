@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+
+.josefin {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.blog {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  color: rgba(0,0,0,.78);
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility !important;
+  color: rgba(27,27,27,.9);
+  text-align: start;
+  letter-spacing: .01em;
+}
