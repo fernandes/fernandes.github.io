@@ -1,6 +1,6 @@
 # Respect
 
-As this website is versioned under git version-control system, you can check the full history of this file on [Github](https://github.com/fernandes/fernandes.github.io/commits/master/src/pages/respect.js)
+As this website is versioned under git version-control system, you can check the full history of this file on [Github](https://github.com/fernandes/fernandes.github.io/commits/master/src/routes/respect.md)
 
 This website is run solely by one person, [me](/about).
 
