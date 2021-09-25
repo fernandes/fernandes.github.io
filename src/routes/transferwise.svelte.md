@@ -5,7 +5,7 @@ date:   2019-04-10 21:00:00
 categories: travel
 tags: travel costs card currency-exchange
 comments: true
-path: /travel/transferwise
+path: /transferwise
 featured: true
 media:
   type: "image"

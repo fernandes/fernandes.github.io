@@ -4,7 +4,7 @@ title:    Using jekyll on pow
 date:     2015-02-15 13:57:12
 category: tips
 tags:     ruby jekyll rack pow
-path:     /tips/using-jekyll-on-pow
+path:     /using-jekyll-on-pow
 featured: true
 media:
   type:     image

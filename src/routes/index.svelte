@@ -18,7 +18,7 @@
   imageAltText={"montage with bash logo, crystal logo and test text"}
   tags={"crystal, bash, shell script, test"}
   date={"September 24, 2021"}
-  href={"/crystal/crystal-and-the-test-command"}
+  href={"/crystal-and-the-test-command"}
   excerpt={`
     When writing shell script, there's <strong>test</strong>, a condition evaluation utility. Crystal is a power programming language, that supports all <strong>test</strong> features.<br />
     What if we are porting a shell script to crystal, and we want to verify the correspondent command quickly? Check this article/cheatsheet and discover everything you need.
@@ -32,7 +32,7 @@
   imageAltText={"Transferwise Logo"}
   tags={"travel, costs, card, currency-exchange"}
   date={"April 10, 2019"}
-  href={"/travel/transferwise"}
+  href={"/transferwise"}
   excerpt={`
     🇧🇷 Transferwise é uma fintech do reino unido que veio para facilitar as operações de câmbio,
     de forma fácil, transparente e mais barata. Compartilho minha experiência e faço um comparativo
@@ -47,7 +47,7 @@
   imageAltText={"The Persistence of Memory Painting by Salvador Dali"}
   tags={"postgresql, rails, javascript, date-fns"}
   date={"January 19, 2019"}
-  href={"/web/timezones-from-a-developers-perspective"}
+  href={"/timezones-from-a-developers-perspective"}
   excerpt={`
     Let's talk in this article about timezones and how it applies to a web system.
     There are 3 main layers where is necessary to pay attention when working with date and times:<br />
@@ -66,7 +66,7 @@
   imageAltText={"Blade Runner Movie Image"}
   tags={"rails, blade, javascript, testing"}
   date={"June 13, 2016"}
-  href={"/rails/using-blade-javascript-runner-on-rails"}
+  href={"/using-blade-javascript-runner-on-rails"}
   excerpt={`
     Looking for a javascript test runner for Rails, I found some options,
     so I decided to choose Blade, as this is not a comparison (I’m not even experienced to do this),
@@ -81,9 +81,9 @@
   imageAltText={"Crystal Language Logo"}
   tags={"crystal, hacking, compiler, opensource"}
   date={"June 01, 2016"}
-  href={"/crystal/hacking-on-crystal-language"}
+  href={"/hacking-on-crystal-language"}
   excerpt={`
-    <a class="underline" href="/crystal/hacking-na-linguagem-crystal">You can also read this article in pt-BR 🇧🇷<a/><br />
+    <a class="underline" href="/hacking-na-linguagem-crystal">You can also read this article in pt-BR 🇧🇷<a/><br />
     Yesterday I started to looking on how to help the Crystal Programming Language,
     so I'd like to share my experience, as well serve as future reference.<br />
   `}
@@ -96,7 +96,7 @@
   imageAltText={"Jekyll Logo"}
   tags={"ruby, jekyll, rack, pow"}
   date={"Feb 02, 2015"}
-  href={"/tips/using-jekyll-on-pow"}
+  href={"/using-jekyll-on-pow"}
   excerpt={`
     The best way to run Jekyll on pow, is make it works as a Rack application. How do it?<br />
     Check here in this article

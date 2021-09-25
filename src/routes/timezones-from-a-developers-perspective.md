@@ -5,7 +5,7 @@ date:   2019-01-19 12:25:00
 categories: web
 tags: postgresql rails javascript date-fns
 comments: true
-path: /web/timezones-from-a-developers-perspective
+path: /timezones-from-a-developers-perspective
 featured: true
 excerpt: 'Have you ever wondered how timezones (correctly) works on Ruby on Rails, React and PostgresSQL? Do you wanna know some best practices about it?<br /><br />
 

@@ -1,19 +1,19 @@
 # Articles
 
-## 2019 Apr
+## 2021
 
-- [Transferwise](/travel/transferwise) : travel, costs, card, currency-exchange
+- [Crystal and The Test Command](/crystal-and-the-test-command) : crystal, bash, shell script, test
+## 2019
 
-## 2019 Jan
+- [Transferwise](/transferwise) : travel, costs, card, currency-exchange
+- [Time Zones From A Developer's Perspective](/timezones-from-a-developers-perspective) : postgresql, rails, javascript, date-fns
 
-- [Time Zones From A Developer's Perspective](/web/timezones-from-a-developers-perspective) : postgresql, rails, javascript, date-fns
+## 2016
 
-## 2016 Jun
+- [Using Blade (JavaScript) Runner on Rails App](/using-blade-javascript-runner-on-rails) : rails, blade, javascript, testing
+- [Hacking on Crystal Language](/hacking-on-crystal-language) : crystal, hacking, compiler, opensource
+  - [Hacking na Linguagem Crystal](/hacking-na-linguagem-crystal) : 🇧🇷 version
 
-- [Using Blade (JavaScript) Runner on Rails App](/rails/using-blade-javascript-runner-on-rails) : rails, blade, javascript, testing
-- [Hacking on Crystal Language](/crystal/hacking-on-crystal-language) : crystal, hacking, compiler, opensource
-  - [Hacking na Linguagem Crystal](/crystal/hacking-na-linguagem-crystal) : 🇧🇷 version
+## 2015
 
-## 2015 Feb
-
-- [Using Jekyll on Pow](/tips/using-jekyll-on-pow) : ruby, jekyll, rack, pow
+- [Using Jekyll on Pow](/using-jekyll-on-pow) : ruby, jekyll, rack, pow

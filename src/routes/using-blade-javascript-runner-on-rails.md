@@ -6,7 +6,7 @@ categories: rails
 tags: rails blade javascript testing
 image: /assets/images/backgound_blade.jpg
 comments: true
-path: /rails/using-blade-javascript-runner-on-rails
+path: /using-blade-javascript-runner-on-rails
 featured: true
 media:
   type: "image"
@@ -17,7 +17,7 @@ media:
 
 ## Motivation
 
-Você pode ver esse post em [português](/rails/usando-blade-para-testar-javascript-no-rails)
+Você pode ver esse post em [português](/usando-blade-para-testar-javascript-no-rails)
 
 Looking for a javascript test runner for Rails, I found some options, so I decided to choose [Blade](https://github.com/javan/blade), as this is not a comparison (I'm not even experienced to do this), here are the reasons why I preferred Blade:
 

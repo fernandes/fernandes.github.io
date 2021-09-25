@@ -6,7 +6,7 @@ categories: crystal
 tags: crystal hacking compiler opensource br
 image: /assets/article_images/crystal_language.jpg
 comments: true
-path: /crystal/hacking-na-linguagem-crystal
+path: /hacking-na-linguagem-crystal
 media:
   type: "image"
   source: "crystal_language.jpg"
@@ -16,7 +16,7 @@ media:
 
 # Hacking na Linguagem Crystal
 
-You can check this post in [english](/crystal/hacking-on-crystal-language)
+You can check this post in [english](/hacking-on-crystal-language)
 
 Ontem eu comecei a ajudar na Linguagem de Programação [Crystal](http://crystal-lang.org/), então eu gostaria de compartilhar aqui minhas experiências e que possam servir de referência futuramente.
 

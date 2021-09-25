@@ -6,7 +6,7 @@ categories: crystal
 tags: crystal bash shell script test
 image: /assets/article_images/crystal_language.jpg
 comments: true
-path: /crystal/crystal-and-the-test-command
+path: /crystal-and-the-test-command
 media:
   type: "image"
   source: "crystal_bash_test.jpg"
