@@ -1,18 +1,19 @@
 ---
 layout: article
-title:  "Hacking on Crystal Language"
+title:  Hacking on Crystal Language
 date:   2016-06-01 13:46:12
 categories: crystal
-tags: crystal hacking compiler opensource
-image: /assets/article_images/crystal_language.jpg
-comments: true
+tags: crystal, hacking, compiler, opensource
 path: /hacking-on-crystal-language
-featured: true
+excerpt: |
+  <a class="underline" href="/hacking-na-linguagem-crystal">You can also read this article in pt-BR 🇧🇷<a/><br />
+  Yesterday I started to looking on how to help the Crystal Programming Language,
+  so I'd like to share my experience, as well serve as future reference.<br />
 media:
-  type: "image"
-  source: "crystal_language.jpg"
-  alt: "crystal language"
-  caption: "crystal language"
+  type: image
+  source: posts_crystal_language
+  alt: Crystal Language Logo
+  caption: hacking, the crystalized way
 ---
 
 # Hacking on Crystal Language

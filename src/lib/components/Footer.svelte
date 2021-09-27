@@ -1,7 +1,7 @@
 <script>
-import About from "$lib/components//Footer/About.svelte"
-import Links from "$lib/components//Footer/Links.svelte"
-import Mailing from "$lib/components//Footer/Mailing.svelte"
+import About from "$lib/components/Footer/About.svelte"
+import Links from "$lib/components/Footer/Links.svelte"
+import Mailing from "$lib/components/Footer/Mailing.svelte"
 </script>
 
 <footer class="flex flex-col border-t-2 w-full mt-10 pt-4">

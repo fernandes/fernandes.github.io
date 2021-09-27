@@ -18,6 +18,7 @@ module.exports = {
 	],
 	layout: {
 		article: "./src/lib/layouts/article.mdsvex.svelte",
+		page: "./src/lib/layouts/page.mdsvex.svelte",
 		_: "./src/lib/layouts/article.mdsvex.svelte"
 	}
 };

@@ -1,17 +1,19 @@
 ---
 layout: article
-title:  "Transferwise"
+title:  Transferwise
 date:   2019-04-10 21:00:00
 categories: travel
-tags: travel costs card currency-exchange
-comments: true
+tags: travel, costs, card, currency exchange
 path: /transferwise
-featured: true
+excerpt:
+  🇧🇷 Transferwise é uma fintech do reino unido que veio para facilitar as operações de câmbio,
+    de forma fácil, transparente e mais barata. Compartilho minha experiência e faço um comparativo
+    com a solução que eu usava anteriormente, o BB Americas.
 media:
-  type: "image"
-  source: "transferwise.jpg"
-  alt: "transferwise logo"
-  caption: "transferwise logo"
+  type: image
+  source: posts_transferwise_logo
+  alt: transferwise logo
+  caption: transferwise logo
 ---
 
 # Transferwise

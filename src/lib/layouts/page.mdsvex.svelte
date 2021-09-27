@@ -1,6 +1,4 @@
 <script>
-  export let date;
-  import PostFormattedDate from '$lib/components/PostFormattedDate.svelte'
   import "./syntax.scss"
 </script>
 
@@ -75,12 +73,10 @@
 }
 </style>
 
-
 <div class="relative pb-16 bg-white overflow-hidden">
   <div class="relative px-2">
     <div class="mt-6 prose max-w-none prose-indigo prose-md text-gray-500">
       <article class="markdown">
-        <PostFormattedDate date={date} />
         <slot />
       </article>
     </div>

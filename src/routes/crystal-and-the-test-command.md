@@ -1,17 +1,19 @@
 ---
 layout: article
-title:  "Crystal and The Test Command"
+title:  Crystal and The Test Command
 date:   2021-09-24 20:06:02
 categories: crystal
-tags: crystal bash shell script test
-image: /assets/article_images/crystal_language.jpg
+tags: crystal, bash, shell script, test
 comments: true
 path: /crystal-and-the-test-command
+excerpt:
+  When writing shell script, there's <strong>test</strong>, a condition evaluation utility. Crystal is a power programming language, that supports all <strong>test</strong> features.<br />
+    What if we are porting a shell script to crystal, and we want to verify the correspondent command quickly? Check this article/cheatsheet and discover everything you need.
 media:
-  type: "image"
-  source: "crystal_bash_test.jpg"
-  alt: "montage with bash logo, crystal logo and test text"
-  caption: "having fun with crystal and shell script"
+  type: image
+  source: posts_crystal_bash_test
+  alt: montage with bash logo, crystal logo and test text
+  caption: having fun with crystal and shell script
 ---
 
 # Crystal and The Test Command

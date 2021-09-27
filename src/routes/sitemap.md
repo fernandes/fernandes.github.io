@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # Sitemap
 
 This is the simplest sitemap ever, just to make sure you enjoy in it's fully potential, here are the links to the most interesting (or not) content.

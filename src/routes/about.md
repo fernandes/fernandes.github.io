@@ -1,5 +1,5 @@
 ---
-layout:   article
+layout:   page
 title:    About Me
 date:     2018-01-18 12:45:00
 category: pages

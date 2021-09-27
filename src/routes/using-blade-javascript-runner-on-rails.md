@@ -1,19 +1,22 @@
 ---
 layout: article
-title:  "Using Blade (JavaScript) Runner on Rails App"
+title:  Using Blade (JavaScript) Runner on Rails App
 date:   2016-06-13 21:00:00
 categories: rails
-tags: rails blade javascript testing
-image: /assets/images/backgound_blade.jpg
-comments: true
+tags: rails, blade, javascript, testing
 path: /using-blade-javascript-runner-on-rails
-featured: true
+excerpt: |
+  Looking for a javascript test runner for Rails, I found some options,
+  so I decided to choose Blade, as this is not a comparison (I’m not even experienced to do this),
+  and in this article I share my experience testing javascript and running tests with Blade.
 media:
-  type: "image"
-  source: "blade.jpg"
-  alt: "blade runner"
-  caption: "blade runner"
+  type: image
+  source: posts_blade
+  alt: Blade Runner Movie Image
+  caption: Blade (JavaScript) Runner
 ---
+
+# Using Blade (JavaScript) Runner on Rails App
 
 ## Motivation
 

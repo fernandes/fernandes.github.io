@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # Articles
 
 ## 2021

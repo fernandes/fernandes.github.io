@@ -1,18 +1,18 @@
 ---
 layout: article
-title:  "Usando Blade Para Testar JavaScript no Rails"
+title:  Usando Blade Para Testar JavaScript no Rails
 date:   2016-06-13 21:00:00
 categories: rails
-tags: rails blade javascript testing
-image: /assets/images/backgound_blade.jpg
-comments: true
+tags: rails, blade, javascript, testing, br
 path: /usando-blade-para-testar-javascript-no-rails
 media:
-  type: "image"
-  source: "blade.jpg"
-  alt: "blade runner"
-  caption: "blade runner"
+  type: image
+  source: posts_blade
+  alt: Blade Runner Imagem do Filme
+  caption: Blade (JavaScript) Runner
 ---
+
+# Usando Blade Para Testar JavaScript no Rails
 
 ## Motivação
 

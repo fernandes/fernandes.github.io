@@ -1,10 +1,7 @@
 <script>
 	import Header from '$lib/components/Header.svelte';
 	import Menu from '$lib/components/Menu.svelte';
-	import ArticleItem from '$lib/components/ArticleItem.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-  import transferwiseLogo from "$lib/images/transferwise-logo.jpg"
-  import timezones from "$lib/images/timezones.jpg"
 	import "../app.scss";
   import CustomNotification from '$lib/CustomNotification.svelte';
 	import NotificationsDisplay from 'svelte-notifications';

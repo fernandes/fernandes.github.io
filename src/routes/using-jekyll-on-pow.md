@@ -1,17 +1,22 @@
 ---
 layout:   article
-title:    Using jekyll on pow
+title:    Using Jekyll on Pow
 date:     2015-02-15 13:57:12
 category: tips
-tags:     ruby jekyll rack pow
+tags:     ruby, jekyll, rack, pow
 path:     /using-jekyll-on-pow
-featured: true
+excerpt: |
+  The best way to run Jekyll on pow, is make it works as a Rack application. How do it?<br />
+  Check here in this article
 media:
   type:     image
-  source:   jekyll.jpg
-  alt:      jekyll
-  caption:  jekyll
+  source:   posts_jekyll
+  alt:      Jekyll Logo
+  caption:  Mr. Hyde would be proud of
 ---
+
+# Using Jekyll on Pow
+
 The best way to run Jekyll on pow, is make it works as a Rack application. How do it?
 
 If you have created your application using `jekyll new` you need to create a Gemfile with the following content:

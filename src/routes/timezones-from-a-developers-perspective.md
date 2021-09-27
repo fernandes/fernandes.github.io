@@ -3,18 +3,21 @@ layout: article
 title:  Time Zones From A Developer's Perspective
 date:   2019-01-19 12:25:00
 categories: web
-tags: postgresql rails javascript date-fns
-comments: true
+tags: postgresql, rails, javascript, date-fns
 path: /timezones-from-a-developers-perspective
-featured: true
-excerpt: 'Have you ever wondered how timezones (correctly) works on Ruby on Rails, React and PostgresSQL? Do you wanna know some best practices about it?<br /><br />
-
-In this essay I share my thoughts and what I consider best practices about it. Hope you enjoy'
+excerpt: |
+  Let's talk in this article about timezones and how it applies to a web system.
+  There are 3 main layers where is necessary to pay attention when working with date and times:<br />
+  <ul>
+    <li>- Database</li>
+    <li>- Rails</li>
+    <li>- JavaScript</li>
+  </ul>
 media:
-  type: "image"
-  source: "timezones.jpg"
-  alt: "Dali painting the persistence of memory"
-  caption: "the persistence of memory"
+  type: image
+  source: posts_timezones
+  alt: Dali painting the persistence of memory
+  caption: the persistence of memory
 ---
 
 # Time Zones From A Developer's Perspective

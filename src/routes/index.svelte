@@ -1,104 +1,33 @@
 <script>
-	import Header from '$lib/components/Header.svelte';
-	import Menu from '$lib/components/Menu.svelte';
-	import ArticleItem from '$lib/components/ArticleItem.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-  import transferwiseLogo from "$lib/images/transferwise-logo.jpg"
-  import timezones from "$lib/images/timezones.jpg"
-  import cover_crystal_bash_test from "$lib/images/crystal_bash_test.jpg"
-  import cover_blade from "$lib/images/blade.jpg"
-  import cover_jekyll from "$lib/images/jekyll.jpg"
-  import cover_crystal from "$lib/images/crystal_language.jpg"
+	import ArticleItemMetadata from '$lib/components/ArticleItemMetadata.svelte';
+  import { metadata as CrystalAndTheTestCommandPostMetadata } from './crystal-and-the-test-command.md'
+  import { metadata as TransferwisePostMetadata } from './transferwise.md'
+  import { metadata as TimezonesFromDevPerspectivePostMetadata } from './timezones-from-a-developers-perspective.md'
+  import { metadata as UsingBladeJavascriptRunnerRailsPostMetadata } from './using-blade-javascript-runner-on-rails.md'
+  import { metadata as HackingOnCrystalLanguagePostMetadata } from './hacking-on-crystal-language.md'
+  import { metadata as UsingJekyllOnPowPostMetadata } from './using-jekyll-on-pow.md'
 </script>
 
-<ArticleItem
-  title={"Crystal And The Test Command"}
-  image={cover_crystal_bash_test}
-  imageCaption={"having fun with crystal and shell script"}
-  imageAltText={"montage with bash logo, crystal logo and test text"}
-  tags={"crystal, bash, shell script, test"}
-  date={"September 24, 2021"}
-  href={"/crystal-and-the-test-command"}
-  excerpt={`
-    When writing shell script, there's <strong>test</strong>, a condition evaluation utility. Crystal is a power programming language, that supports all <strong>test</strong> features.<br />
-    What if we are porting a shell script to crystal, and we want to verify the correspondent command quickly? Check this article/cheatsheet and discover everything you need.
-  `}
+<ArticleItemMetadata
+  metadata={CrystalAndTheTestCommandPostMetadata}
 />
 
-<ArticleItem
-  title={"Transferwise"}
-  image={transferwiseLogo}
-  imageCaption={"Transferwise Logo"}
-  imageAltText={"Transferwise Logo"}
-  tags={"travel, costs, card, currency-exchange"}
-  date={"April 10, 2019"}
-  href={"/transferwise"}
-  excerpt={`
-    🇧🇷 Transferwise é uma fintech do reino unido que veio para facilitar as operações de câmbio,
-    de forma fácil, transparente e mais barata. Compartilho minha experiência e faço um comparativo
-    com a solução que eu usava anteriormente, o BB Americas.
-  `}
+<ArticleItemMetadata
+  metadata={TransferwisePostMetadata}
 />
 
-<ArticleItem
-  title={"Time Zones From A Developer's Perspective"}
-  image={timezones}
-  imageCaption={"Daliiiii"}
-  imageAltText={"The Persistence of Memory Painting by Salvador Dali"}
-  tags={"postgresql, rails, javascript, date-fns"}
-  date={"January 19, 2019"}
-  href={"/timezones-from-a-developers-perspective"}
-  excerpt={`
-    Let's talk in this article about timezones and how it applies to a web system.
-    There are 3 main layers where is necessary to pay attention when working with date and times:<br />
-    <ul>
-      <li>- Database</li>
-      <li>- Rails</li>
-      <li>- JavaScript</li>
-    </ul>
-  `}
+<ArticleItemMetadata
+  metadata={TimezonesFromDevPerspectivePostMetadata}
 />
 
-<ArticleItem
-  title={"Using Blade (JavaScript) Runner on Rails App"}
-  image={cover_blade}
-  imageCaption={"Blade (JavaScript) Runner"}
-  imageAltText={"Blade Runner Movie Image"}
-  tags={"rails, blade, javascript, testing"}
-  date={"June 13, 2016"}
-  href={"/using-blade-javascript-runner-on-rails"}
-  excerpt={`
-    Looking for a javascript test runner for Rails, I found some options,
-    so I decided to choose Blade, as this is not a comparison (I’m not even experienced to do this),
-    and in this article I share my experience testing javascript and running tests with Blade.
-  `}
+<ArticleItemMetadata
+  metadata={UsingBladeJavascriptRunnerRailsPostMetadata}
 />
 
-<ArticleItem
-  title={"Hacking on Crystal Language"}
-  image={cover_crystal}
-  imageCaption={"hacking, the crystalized way"}
-  imageAltText={"Crystal Language Logo"}
-  tags={"crystal, hacking, compiler, opensource"}
-  date={"June 01, 2016"}
-  href={"/hacking-on-crystal-language"}
-  excerpt={`
-    <a class="underline" href="/hacking-na-linguagem-crystal">You can also read this article in pt-BR 🇧🇷<a/><br />
-    Yesterday I started to looking on how to help the Crystal Programming Language,
-    so I'd like to share my experience, as well serve as future reference.<br />
-  `}
+<ArticleItemMetadata
+  metadata={HackingOnCrystalLanguagePostMetadata}
 />
 
-<ArticleItem
-  title={"Using jekyll on pow"}
-  image={cover_jekyll}
-  imageCaption={"Mr. Hyde would be proud of"}
-  imageAltText={"Jekyll Logo"}
-  tags={"ruby, jekyll, rack, pow"}
-  date={"Feb 02, 2015"}
-  href={"/using-jekyll-on-pow"}
-  excerpt={`
-    The best way to run Jekyll on pow, is make it works as a Rack application. How do it?<br />
-    Check here in this article
-  `}
+<ArticleItemMetadata
+  metadata={UsingJekyllOnPowPostMetadata}
 />
